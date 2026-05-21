@@ -1,0 +1,82 @@
+08:45:48.421451800     Login     User Logged in kaffy
+08:45:50.314573800     character select     choose character aga
+08:45:51.867629900     forest     entered battle
+08:45:53.108514500     battle     player attacked, did 29
+08:45:56.219802300     battle     player won
+08:45:58.201291700     Forest     entered inventory
+08:46:02.218319700     inventory     unequipped weapon
+08:46:04.641431800     inventory     equipped weapon
+08:46:06.536887800     forest     entered battle
+08:46:08.081063700     battle     player attacked, did 37
+08:46:10.056957500     battle     player won
+08:46:11.360730400     forest     entered stats
+08:46:16.556738400     forest     generated shop items
+08:46:16.605011200     forest     entered village
+08:47:20.563406100     village     entered shop
+08:47:41.487782100     shop     bougth item
+08:47:49.828121500     village     entered inn
+08:47:51.574324600     inn     spent night
+08:47:55.295168300     forest     generated shop items
+08:47:55.337436300     forest     entered village
+08:47:57.005304     forest     entered battle
+08:48:00.116687200     battle     player attacked, did 21
+08:48:02.719011600     battle     entered inventory
+08:48:04.660017200     inventory     used stat potion
+08:48:09.011417500     battle     player attacked, did 20
+08:48:10.866003     battle     player attacked, did 19
+08:48:13.113634     battle     player died
+08:48:30.208454400     Create character     created character aga
+08:48:31.725946100     forest     entered battle
+08:48:32.798822700     battle     player attacked, did 19
+08:48:36.645913100     battle     player won
+08:48:39.246943300     forest     generated shop items
+08:48:39.287291700     forest     entered village
+08:48:40.773469500     village     entered shop
+08:48:55.130784500     shop     bougth item
+08:48:58.825964100     forest     entered battle
+08:49:00.547215900     battle     entered inventory
+08:49:12.191752800     battle     player attacked, did 19
+08:49:14.809875200     battle     entered inventory
+08:51:11.093644600     Register     try to register: a
+08:51:13.197797500     Login     User Logged in a
+08:51:17.656264     character select     choose character aga
+08:51:19.076003700     Forest     Save and exit aga
+08:51:57.392472700     Register     try to register: a
+08:51:59.896740900     Login     User Logged in a
+08:52:10.577414     Create character     created character vvv
+08:52:12.284952400     forest     entered battle
+08:52:15.423511200     forest     generated shop items
+08:52:15.474336700     forest     entered village
+08:52:17.422016300     village     entered shop
+08:52:24.339954600     shop     bougth item
+08:52:27.554904900     forest     entered battle
+08:52:29.105467800     battle     entered inventory
+08:52:33.706641700     inventory     used stat scroll
+08:52:39.385898300     battle     player attacked, did 27
+08:52:41.937259300     battle     player won
+08:52:43.130040600     forest     entered stats
+08:52:50.887605900     Forest     entered inventory
+08:52:54.520036800     forest     entered battle
+08:52:55.887880500     battle     player attacked, did 32
+08:52:57.110764400     battle     player attacked, did 28
+08:52:59.630140     battle     player won
+08:53:01.206351200     forest     entered battle
+08:53:03.231076400     forest     generated shop items
+08:53:03.270311700     forest     entered village
+08:53:05.531392600     village     entered inn
+08:53:06.750095500     inn     spent night
+08:53:13.054613500     village     entered shop
+08:53:39.961794600     shop/sell     sold item
+08:53:41.665502900     shop/sell     sold item
+08:53:48.280675400     shop     bougth item
+08:53:52.893104     Forest     entered inventory
+08:54:01.551218100     forest     entered battle
+08:54:02.875613900     battle     entered inventory
+08:54:04.654057900     inventory     used protection scroll
+08:54:07.197877     battle     player attacked, did 28
+08:54:09.765614600     battle     player won
+08:54:11.861038400     forest     entered battle
+08:54:13.645678500     battle     player attacked, did 16
+08:54:14.884211     battle     player attacked, did 18
+08:54:16.611707300     battle     player attacked, did 14
+08:54:18.044596200     battle     player died

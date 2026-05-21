@@ -162,6 +162,8 @@ public class frmScreen extends javax.swing.JFrame {
         CCdefaultWeapons.clear();
         // sword 
         AccountItems++;
+
+       
         CCdefaultWeapons.add(new Weapon(36, 0, 14, 0, AccountID + "-" + AccountItems, "Sword", 2, 5, "common", "src/Images/sword.jpg"));
 
         // magic sword
@@ -173,7 +175,7 @@ public class frmScreen extends javax.swing.JFrame {
     }
 
     /**
-     * sets the images when chenged
+     * sets the images when changed
      */
     void setWeaponImageCC() {
         // CCweaponSelector
@@ -191,7 +193,7 @@ public class frmScreen extends javax.swing.JFrame {
     }
 
     /**
-     * inicializes the character selection 
+     * inicializes the character selection
      */
     void setCharacterSelect() {
         // array list de players, 
@@ -216,8 +218,9 @@ public class frmScreen extends javax.swing.JFrame {
     }
 
     /**
-     * next / back button to select charactets
-     * @param direction go forward or back 
+     * next / back button to select characters
+     *
+     * @param direction go forward or back
      */
     void setCharacterSelect(String direction) {
         // array list de players,        
@@ -322,7 +325,7 @@ public class frmScreen extends javax.swing.JFrame {
     }
 
     /**
-     * sets the images in inventory 
+     * sets the images in inventory
      */
     void setInventory() {
         String imageFile;
@@ -584,10 +587,10 @@ public class frmScreen extends javax.swing.JFrame {
 
     /**
      * returns the position in the inventory array
+     *
      * @param ItemID id of item selected
      * @return returns index of item with specified id
      */
-
     int InvPotionInt(String ItemID) {
         int index = 0;
         for (int i = 0; i < InvPotion.size(); i++) {
@@ -599,7 +602,8 @@ public class frmScreen extends javax.swing.JFrame {
     }
 
     /**
-     *returns the position in the inventory array
+     * returns the position in the inventory array
+     *
      * @param ItemID id of item selected
      * @return returns index of item with specified id
      */
@@ -614,7 +618,8 @@ public class frmScreen extends javax.swing.JFrame {
     }
 
     /**
-     *returns the position in the inventory array
+     * returns the position in the inventory array
+     *
      * @param ItemID id of item selected
      * @return returns index of item with specified id
      */
@@ -630,6 +635,7 @@ public class frmScreen extends javax.swing.JFrame {
 
     /**
      * returns the position in the inventory array
+     *
      * @param ItemID id of item selected
      * @return returns index of item with specified id
      */
@@ -644,7 +650,8 @@ public class frmScreen extends javax.swing.JFrame {
     }
 
     /**
-     *returns the position in the inventory array
+     * returns the position in the inventory array
+     *
      * @param ItemID id of item selected
      * @return returns index of item with specified id
      */
@@ -659,7 +666,8 @@ public class frmScreen extends javax.swing.JFrame {
     }
 
     /**
-     *returns the position in the inventory array
+     * returns the position in the inventory array
+     *
      * @param ItemID id of item selected
      * @return returns index of item with specified id
      */
@@ -675,6 +683,7 @@ public class frmScreen extends javax.swing.JFrame {
 
     /**
      * shown the info of selected item in inventory
+     *
      * @param pos the selected item
      */
     void InvItemClick(int pos) {
@@ -709,7 +718,9 @@ public class frmScreen extends javax.swing.JFrame {
                 lblInvinfo2.setText("Will: " + InvSPotion.get(index).getWill() + "");
                 lblInvinfo3.setText("Knowledge: " + InvSPotion.get(index).getKnowledge() + "");
                 lblInvinfo4.setText("Agility: " + InvSPotion.get(index).getAgility() + "");
-                btnInvUse.setEnabled(true);
+                if (lastVisitedPanel.equals("battleForest")) {
+                    btnInvUse.setEnabled(true);
+                }
                 break;
             case "pscroll":
                 index = InvPScrollInt(ItemID);
@@ -718,6 +729,9 @@ public class frmScreen extends javax.swing.JFrame {
                 lblInvSell.setText("Price: " + InvPScroll.get(index).getSellPrice() + "");
                 lblInvinfo1.setText("Needed Knowledge: " + InvPScroll.get(index).getNeededKnowdelge() + "");
                 lblInvinfo2.setText("Value: " + InvPScroll.get(index).getValue() + "");
+                if (lastVisitedPanel.equals("battleForest")) {
+                    btnInvUse.setEnabled(true);
+                }
                 break;
             case "sscroll":
                 index = InvSScrollInt(ItemID);
@@ -729,6 +743,9 @@ public class frmScreen extends javax.swing.JFrame {
                 lblInvinfo3.setText("Will: " + InvSScroll.get(index).getWill() + "");
                 lblInvinfo4.setText("Knowledge: " + InvSScroll.get(index).getKnowledge() + "");
                 lblInvinfo5.setText("Agility: " + InvSScroll.get(index).getAgility() + "");
+                if (lastVisitedPanel.equals("battleForest")) {
+                    btnInvUse.setEnabled(true);
+                }
                 break;
             case "weapon":
                 index = InvWeaponInt(ItemID);
@@ -739,7 +756,7 @@ public class frmScreen extends javax.swing.JFrame {
                 lblInvinfo2.setText("Magic Damage: " + InvWeapon.get(index).getMagicDamage() + "");
                 lblInvinfo3.setText("Armour Penetration: " + InvWeapon.get(index).getArmourPenetration() + "");
                 lblInvinfo4.setText("Magic Penetration: " + InvWeapon.get(index).getMagicPenetration() + "");
-                if (lastVisitedPanel.equals("forest")) {
+                if (!lastVisitedPanel.equals("battleForest")) {
                     btnInvEquip.setEnabled(true);
                 }
 
@@ -755,11 +772,12 @@ public class frmScreen extends javax.swing.JFrame {
                 lblInvinfo4.setText("Will: " + InvArmour.get(index).getWill() + "");
                 lblInvinfo5.setText("Knowledge: " + InvArmour.get(index).getKnowledge() + "");
                 lblInvinfo6.setText("Agility: " + InvArmour.get(index).getAgility() + "");
-                if (lastVisitedPanel.equals("forest")) {
+                if (!lastVisitedPanel.equals("battleForest")) {
                     btnInvEquip.setEnabled(true);
                 }
                 break;
         }
+        btnInvDrop.setEnabled(true);
 
     }
 
@@ -789,22 +807,22 @@ public class frmScreen extends javax.swing.JFrame {
         int halflevel = level / 2;
         switch (random) {
             case "0.0":// slime:   23 , 6 , 40 , 17 , 12 , 40 , 16
-                currentMonster.add(new Monster("Slime", level, 23 + level, 6 + level, "src/Images/slime.jpg", 40 + halflevel, 12 + halflevel, 12 + halflevel, 60, 36));
+                currentMonster.add(new Monster("Slime", level, 23 + level, 4 + level, "src/Images/slime.jpg", 40 + level, 17 + (level * 2), 17 + (level * 2), 60 + level, 36 + level));
                 break;
             case "1.0":   // wolf:    36 , 11 , 60 , 25 , 0 , 23 , 20
-                currentMonster.add(new Monster("Wolf", level, 36 + level, 11 + level, "src/Images/wolf.jpg", 60 + halflevel, 25 + halflevel, 0, 43, 40));
+                currentMonster.add(new Monster("Wolf", level, 36 + level, 7 + level, "src/Images/wolf.jpg", 60 + level, 30 + (level * 2), 0, 43 + level, 40 + level));
                 break;
             case "2.0": // bear:    51 , 23 , 80 , 37 , 0 , 50 , 20
-                currentMonster.add(new Monster("Bear", level, 51 + level, 23 + level, "src/Images/bear.jpg", 80 + halflevel, 37 + halflevel, 0, 70, 46));
+                currentMonster.add(new Monster("Bear", level, 51 + level, 17 + level, "src/Images/bear.jpg", 80 + level, 42 + (level * 2), 0, 70 + level, 46 + level));
                 break;
             case "3.0":// goblin:  34 , 13 , 45 , 21 , 18 , 30 , 21
-                currentMonster.add(new Monster("Goblin", level, 34 + level, 13 + level, "src/Images/goblin.jpg", 45 + halflevel, 18 + halflevel, 14 + halflevel, 50, 41));
+                currentMonster.add(new Monster("Goblin", level, 34 + level, 9 + level, "src/Images/goblin.jpg", 45 + level, 25 + (level * 2), 19 + (level * 2), 50 + level, 41 + level));
                 break;
             case "4.0":// skele:   38 , 12 , 50 , 24 , 0 , 20 , 30
-                currentMonster.add(new Monster("Skeleton", level, 38 + level, 12 + level, "src/Images/skeleton.jpg", 50 + halflevel, 24 + halflevel, 0, 40, 50));
+                currentMonster.add(new Monster("Skeleton", level, 38 + level, 11 + level, "src/Images/skeleton.jpg", 50 + level, 29 + (level * 2), 0, 40 + level, 50 + level));
                 break;
             case "5.0":// orc:     61 , 41 , 85 , 40 , 20 , 50 , 50
-                currentMonster.add(new Monster("Orc", level, 61 + level, 41 + level, "src/Images/orc.jpg", 85 + halflevel, 30 + halflevel, 10 + halflevel, 70, 70));
+                currentMonster.add(new Monster("Orc", level, 53 + level, 20 + level, "src/Images/orc.jpg", 85 + level, 37 + (level * 2), 18 + (level * 2), 70 + level, 70 + level));
                 break;
         }
 
@@ -933,6 +951,7 @@ public class frmScreen extends javax.swing.JFrame {
 
     /**
      * generates the items you find in the shop
+     *
      * @param count how many to create
      */
     void GenerateShop(int count) {
@@ -940,6 +959,8 @@ public class frmScreen extends javax.swing.JFrame {
         // potion | spotion | sscroll | pscroll | weapon | armour 
         for (int i = 0; i < count; i++) {
             AccountItems++;
+
+           
             int randomType = (int) Math.floor(Math.random() * 6);
             String[] rarity = {"common", "rare", "epic", "legendary"};
             int rarityR = (int) Math.floor(Math.random() * 4);
@@ -1397,6 +1418,7 @@ public class frmScreen extends javax.swing.JFrame {
 
     /**
      * generates a number to give items that use str, will, knw, agi
+     *
      * @param i size of number
      * @return random number
      */
@@ -1534,6 +1556,7 @@ public class frmScreen extends javax.swing.JFrame {
 
     /**
      * returns the position in the shop array
+     *
      * @param ItemID id of item selected
      * @return returns index of item with specified id
      */
@@ -1549,6 +1572,7 @@ public class frmScreen extends javax.swing.JFrame {
 
     /**
      * returns the position in the shop array
+     *
      * @param ItemIDid of item selected
      * @returnreturns index of item with specified id
      */
@@ -1578,7 +1602,8 @@ public class frmScreen extends javax.swing.JFrame {
     }
 
     /**
-     *returns the position in the shop array
+     * returns the position in the shop array
+     *
      * @param ItemID id of item selected
      * @returnreturns index of item with specified id
      */
@@ -1593,7 +1618,8 @@ public class frmScreen extends javax.swing.JFrame {
     }
 
     /**
-     *returns the position in the shop array
+     * returns the position in the shop array
+     *
      * @param ItemID id of item selected
      * @returnreturns index of item with specified id
      */
@@ -1608,7 +1634,8 @@ public class frmScreen extends javax.swing.JFrame {
     }
 
     /**
-     *returns the position in the shop array
+     * returns the position in the shop array
+     *
      * @param ItemID id of item selected
      * @returnreturns index of item with specified id
      */
@@ -1623,7 +1650,8 @@ public class frmScreen extends javax.swing.JFrame {
     }
 
     /**
-     *shows info when clicked a item in shop
+     * shows info when clicked a item in shop
+     *
      * @param pos
      */
     void shopitemClick(int pos) {
@@ -1706,6 +1734,7 @@ public class frmScreen extends javax.swing.JFrame {
 
     /**
      * shows info when item is selected in sell shop
+     *
      * @param pos
      */
     void sellitemClick(int pos) {
@@ -2775,7 +2804,7 @@ public class frmScreen extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        pBattleForest.add(pcontrolBatF, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 430, 220, -1));
+        pBattleForest.add(pcontrolBatF, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 450, 220, -1));
         pBattleForest.add(lblForestBattlePlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 160, 160));
         pBattleForest.add(lblForestBattleMonster, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 20, 160, 160));
 
@@ -3581,7 +3610,7 @@ public class frmScreen extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
         );
 
-        pVillage.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 450, -1, -1));
+        pVillage.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 440, -1, -1));
 
         lblVillageP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pVillage.add(lblVillageP, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 150, 150));
@@ -3692,7 +3721,7 @@ public class frmScreen extends javax.swing.JFrame {
                 jButton12ActionPerformed(evt);
             }
         });
-        jPanel40.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
+        jPanel40.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, -1, -1));
 
         jButton10.setText("Leave");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -3700,7 +3729,7 @@ public class frmScreen extends javax.swing.JFrame {
                 jButton10ActionPerformed(evt);
             }
         });
-        jPanel40.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 96, -1));
+        jPanel40.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 96, -1));
 
         jButton11.setText("Rest");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -3708,9 +3737,9 @@ public class frmScreen extends javax.swing.JFrame {
                 jButton11ActionPerformed(evt);
             }
         });
-        jPanel40.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 96, -1));
+        jPanel40.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 96, -1));
 
-        pInn.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 450, -1, -1));
+        pInn.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 460, 260, 110));
 
         PlayerInn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pInn.add(PlayerInn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 150, 150));
@@ -3789,7 +3818,7 @@ public class frmScreen extends javax.swing.JFrame {
 
         jLabel8.setText("Rest: 15 HP 5 Gold");
 
-        jLabel12.setText("Night: full HP 15 gold");
+        jLabel12.setText("Night: full HP 30 gold");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -4367,6 +4396,7 @@ public class frmScreen extends javax.swing.JFrame {
         );
 
         jPanel87.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel87.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnExitInv1.setText("Exit");
         btnExitInv1.addActionListener(new java.awt.event.ActionListener() {
@@ -4374,6 +4404,7 @@ public class frmScreen extends javax.swing.JFrame {
                 btnExitInv1ActionPerformed(evt);
             }
         });
+        jPanel87.add(btnExitInv1, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 505, 84, -1));
 
         btnSell.setText("Sell");
         btnSell.addActionListener(new java.awt.event.ActionListener() {
@@ -4381,84 +4412,37 @@ public class frmScreen extends javax.swing.JFrame {
                 btnSellActionPerformed(evt);
             }
         });
+        jPanel87.add(btnSell, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 452, 84, -1));
 
         sellGold.setText("Gold : 14");
+        jPanel87.add(sellGold, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 392, 68, -1));
 
         sellName.setText("jLabel8");
+        jPanel87.add(sellName, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 21, 282, -1));
 
         sellRarity.setText("jLabel8");
+        jPanel87.add(sellRarity, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 55, 282, -1));
 
         sellSell.setText("jLabel8");
+        jPanel87.add(sellSell, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 89, 282, -1));
 
         sellinfo1.setText("jLabel8");
+        jPanel87.add(sellinfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 123, 282, -1));
 
         sellinfo2.setText("jLabel8");
+        jPanel87.add(sellinfo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 157, 282, -1));
 
         sellinfo3.setText("jLabel8");
+        jPanel87.add(sellinfo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 191, 282, -1));
 
         sellinfo4.setText("jLabel8");
+        jPanel87.add(sellinfo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 225, 282, -1));
 
         sellinfo5.setText("jLabel8");
+        jPanel87.add(sellinfo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 259, 282, -1));
 
         sellinfo6.setText("jLabel8");
-
-        javax.swing.GroupLayout jPanel87Layout = new javax.swing.GroupLayout(jPanel87);
-        jPanel87.setLayout(jPanel87Layout);
-        jPanel87Layout.setHorizontalGroup(
-            jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel87Layout.createSequentialGroup()
-                .addGroup(jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel87Layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addGroup(jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSell, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnExitInv1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel87Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(sellGold, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel87Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(sellName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sellRarity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sellSell, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sellinfo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sellinfo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sellinfo3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sellinfo4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sellinfo5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sellinfo6, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        jPanel87Layout.setVerticalGroup(
-            jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel87Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(sellName)
-                .addGap(18, 18, 18)
-                .addComponent(sellRarity)
-                .addGap(18, 18, 18)
-                .addComponent(sellSell)
-                .addGap(18, 18, 18)
-                .addComponent(sellinfo1)
-                .addGap(18, 18, 18)
-                .addComponent(sellinfo2)
-                .addGap(18, 18, 18)
-                .addComponent(sellinfo3)
-                .addGap(18, 18, 18)
-                .addComponent(sellinfo4)
-                .addGap(18, 18, 18)
-                .addComponent(sellinfo5)
-                .addGap(18, 18, 18)
-                .addComponent(sellinfo6)
-                .addGap(83, 83, 83)
-                .addComponent(sellGold)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(btnSell)
-                .addGap(30, 30, 30)
-                .addComponent(btnExitInv1)
-                .addGap(27, 27, 27))
-        );
+        jPanel87.add(sellinfo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 293, 282, -1));
 
         javax.swing.GroupLayout pSellLayout = new javax.swing.GroupLayout(pSell);
         pSell.setLayout(pSellLayout);
@@ -4469,16 +4453,16 @@ public class frmScreen extends javax.swing.JFrame {
                 .addComponent(jPanel46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel87, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         pSellLayout.setVerticalGroup(
             pSellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pSellLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pSellLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel87, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                    .addComponent(jPanel46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel87, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         getContentPane().add(pSell, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 1150, 590));
@@ -4531,7 +4515,7 @@ public class frmScreen extends javax.swing.JFrame {
                 AccountID = grabAccID(Name);
                 // grab items created
                 AccountItems = getAccItemC(AccountID);
-
+           
                 // check if exists in own table
                 pLogin.setVisible(false);
                 if (doesAccHavePlayer(AccountID)) {
@@ -4574,6 +4558,16 @@ public class frmScreen extends javax.swing.JFrame {
     private void btnCreateCharacterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateCharacterActionPerformed
         pCharacterSelect.setVisible(false);
         btncharacterCreateLeave.setEnabled(false);
+        AccountItems = getAccItemC(AccountID);
+
+        currentPlayer.clear();
+        InvPotion.clear();
+        InvSPotion.clear();
+        InvSScroll.clear();
+        InvPScroll.clear();
+        InvWeapon.clear();
+        InvArmour.clear();
+
         // disable minus button because 10 is lowest
         btnSminus.setEnabled(false);
         btnWminus.setEnabled(false);
@@ -4595,6 +4589,7 @@ public class frmScreen extends javax.swing.JFrame {
         }
         // change screen
         pCharacterCreate.setVisible(true);
+
 
     }//GEN-LAST:event_btnCreateCharacterActionPerformed
 
@@ -4634,12 +4629,14 @@ public class frmScreen extends javax.swing.JFrame {
         lastVisitedPanel = "forest";
         setForest();
         pForest.setVisible(true);
+        AccountItems = getAccItemC(AccountID);
 
         addLogLine("character select", "choose character " + currentPlayer.getFirst().getName());
     }//GEN-LAST:event_btnChooseCharacterActionPerformed
 
     private void btnCharacterCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCharacterCreateActionPerformed
         lblCCerror.setText("");
+        // AccountItems = getAccItemC(AccountID);
         //  check if corrent, grab data
         if (txtfCCPlayerName.getText().isBlank()) {
             lblCCerror.setText("Input a valid name");
@@ -4670,6 +4667,7 @@ public class frmScreen extends javax.swing.JFrame {
         // create armour
 
         AccountItems++;
+       
         CCdefaultArmour.add(new Armour(30, 12, 0, 0, 0, 1, AccountID + "-" + AccountItems, "Cloth Armour", 3, 6, "common", "src/Images/clothArmour.jpg"));
         // add weapon (weapon)
         addWeapon(w.getId(), w.getWeaponDamage(), w.getMagicDamage(), w.getArmourPenetration(), w.getMagicPenetration());
@@ -4695,8 +4693,9 @@ public class frmScreen extends javax.swing.JFrame {
         addOwner(AccountID, AccountName + CharacterCount);
 
         // add potions to player
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             AccountItems++;
+    
             InvPotion.add(new Potion(20, "HP", AccountID + "-" + AccountItems, "Healing Potion", 2, 4, "Common", "src/Images/Hppotion.jpg"));
             // add to database
             Potion pot = InvPotion.getLast();
@@ -4705,6 +4704,7 @@ public class frmScreen extends javax.swing.JFrame {
             addItemTOInventory(AccountName + CharacterCount, pot.getId());
         }
         addItemCountToAcc(AccountID, AccountItems);
+
         pCharacterCreate.setVisible(false);
         // set images and such in forest
         lastVisitedPanel = "forest";
@@ -4735,6 +4735,8 @@ public class frmScreen extends javax.swing.JFrame {
 
     private void btnSaveAndExitForestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveAndExitForestActionPerformed
         pForest.setVisible(false);
+        addItemCountToAcc(AccountID, AccountItems);
+
         addLogLine("Forest", "Save and exit " + currentPlayer.getFirst().getName());
         // delete all items in backpack where player = id 
         // insert into item / potion / armour / weapon / scroll 
@@ -4790,12 +4792,14 @@ public class frmScreen extends javax.swing.JFrame {
         InvArmour.clear();
         InvSScroll.clear();
         InvPScroll.clear();
-
+        addItemCountToAcc(AccountID, AccountItems);
+      
         setCharacterSelect();
         pCharacterSelect.setVisible(true);
     }//GEN-LAST:event_btnSaveAndExitForestActionPerformed
 
     private void btnBattleRunAwayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBattleRunAwayActionPerformed
+      // 1 / 10 chance to fail and disable the run away button.
         pBattleForest.setVisible(false);
         currentMonster.clear();
         if (usedStatChange) {
@@ -4807,6 +4811,7 @@ public class frmScreen extends javax.swing.JFrame {
         }
         setForest();
         pForest.setVisible(true);
+        
     }//GEN-LAST:event_btnBattleRunAwayActionPerformed
 
     private void btnForestInvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForestInvActionPerformed
@@ -4830,6 +4835,7 @@ public class frmScreen extends javax.swing.JFrame {
                 break;
 
             case "village":
+                SetVillage();
                 pVillage.setVisible(true);
                 break;
 
@@ -4904,7 +4910,6 @@ public class frmScreen extends javax.swing.JFrame {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         pInn.setVisible(false);
         switch (lastVisitedPanel) {
-
             case "village":
                 SetVillage();
                 pVillage.setVisible(true);
@@ -4915,8 +4920,8 @@ public class frmScreen extends javax.swing.JFrame {
     private void btnShopLeaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShopLeaveActionPerformed
         pShop.setVisible(false);
         switch (lastVisitedPanel) {
-
             case "village":
+                SetVillage();
                 pVillage.setVisible(true);
                 break;
         }
@@ -4969,7 +4974,7 @@ public class frmScreen extends javax.swing.JFrame {
                 for (int i = 0; i < InvWeapon.size(); i++) {
                     if (InvWeapon.get(i).getId().equals(ItemID)) {
                         currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() + InvWeapon.get(i).getSellPrice());
-                        InvWeapon.get(i);
+                        InvWeapon.remove(i);
                     }
                 }
                 break;
@@ -5444,7 +5449,7 @@ public class frmScreen extends javax.swing.JFrame {
 
                     }
                 } else {
-                    currentPlayer.getFirst().setShield(InvPotion.get(InvPotionInt(ItemID)).getValue());
+                    currentPlayer.getFirst().setShield(currentPlayer.getFirst().getShield() + InvPotion.get(InvPotionInt(ItemID)).getValue());
                 }
                 InvPotion.remove(InvPotionInt(ItemID));
                 addLogLine("inventory", "used potion");
@@ -5485,7 +5490,7 @@ public class frmScreen extends javax.swing.JFrame {
                     will = InvSScroll.get(InvSScrollInt(ItemID)).getWill();
                     knw = InvSScroll.get(InvSScrollInt(ItemID)).getKnowledge();
                     agi = InvSScroll.get(InvSScrollInt(ItemID)).getAgility();
-
+                    
                     if (!usedStatChange) {
                         oldStrength = currentPlayer.getFirst().getStrength();
                         oldWill = currentPlayer.getFirst().getWill();
@@ -5498,6 +5503,7 @@ public class frmScreen extends javax.swing.JFrame {
                     currentPlayer.getFirst().setKnowledge(currentPlayer.getFirst().getKnowledge() + knw);
                     currentPlayer.getFirst().setAgility(currentPlayer.getFirst().getAgility() + agi);
                     InvSScroll.remove(InvSScrollInt(ItemID));
+                    
                     addLogLine("inventory", "used stat scroll");
                 } else {
                     lvlInvNotice.setText("You need more knowledge");
@@ -5570,6 +5576,7 @@ public class frmScreen extends javax.swing.JFrame {
                     InvWeapon.remove(InvWeaponInt(ItemID));
                 } else {
                     InvWeapon.add(currentPlayer.getFirst().getWeaponA());
+                    currentPlayer.getFirst().returnWeaponArry().clear();
                     currentPlayer.getFirst().addWeapon(InvWeapon.get(InvWeaponInt(ItemID)));
                     InvWeapon.remove(InvWeaponInt(ItemID));
                 }
@@ -5582,6 +5589,7 @@ public class frmScreen extends javax.swing.JFrame {
                     InvArmour.remove(InvArmourInt(ItemID));
                 } else {
                     InvArmour.add(currentPlayer.getFirst().getArmourA());
+                    currentPlayer.getFirst().returnArmourArry().clear();
                     currentPlayer.getFirst().addArmour(InvArmour.get(InvArmourInt(ItemID)));
                     InvArmour.remove(InvArmourInt(ItemID));
                 }
@@ -5669,9 +5677,18 @@ public class frmScreen extends javax.swing.JFrame {
         if (dodge > currentPlayer.getFirst().getAgility() + currentPlayer.getFirst().getArmourA().getAgility()) {
             if (currentMonster.getFirst().getMagic() == 0) {
                 MonsterDamagePhy = currentMonster.getFirst().getDamage() - (PlayerPDR / 2);
+                if (MonsterDamagePhy < 5) {
+                    MonsterDamagePhy = 10;
+                }
             } else {
                 MonsterDamagePhy = currentMonster.getFirst().getDamage() - (PlayerPDR / 2);
                 MonsterDamageMag = currentMonster.getFirst().getMagic() - (PlayerMDR / 2);
+                if (MonsterDamagePhy < 5) {
+                    MonsterDamagePhy = 10;
+                }
+                if (MonsterDamageMag < 5) {
+                    MonsterDamageMag = 10;
+                }
             }
 
             if (currentPlayer.getFirst().getShield() > 0) {
@@ -5781,9 +5798,9 @@ public class frmScreen extends javax.swing.JFrame {
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // night
         lblInnInfo.setText("");
-        if (currentPlayer.getFirst().getGold() >= 15) {
+        if (currentPlayer.getFirst().getGold() >= 30) {
             addLogLine("inn", "spent night");
-            currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - 15);
+            currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - 30);
             currentPlayer.getFirst().setCurrentHP(currentPlayer.getFirst().getMaxHP());
         } else {
             lblInnInfo.setText("Insufficient gold");
@@ -5843,60 +5860,61 @@ public class frmScreen extends javax.swing.JFrame {
 
     private void btnShopBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShopBuyActionPerformed
         // buy  ShopItemPos 
+        // addItemCountToAcc(AccountID, AccountItems);
         String ItemID = shopItemID.get(ShopItemPos);
         ImageIcon icon = (ImageIcon) shop.get(ShopItemPos).getIcon();
         String ItemType = icon.getDescription();
         switch (ItemType) {
             case "potion":
                 for (int i = 0; i < ShopPotion.size(); i++) {
-                    if (ShopPotion.get(i).getId().equals(ItemID)) {
+                    if (ShopPotion.get(i).getId().equals(ItemID) && ShopPotion.get(i).getBuyPrice() < currentPlayer.getFirst().getGold()) {
                         InvPotion.add(ShopPotion.get(i));
-                        currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - ShopPotion.get(i).getSellPrice());
+                        currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - ShopPotion.get(i).getBuyPrice());
                         ShopPotion.remove(i);
                     }
                 }
                 break;
             case "spotion":
                 for (int i = 0; i < ShopSPotion.size(); i++) {
-                    if (ShopSPotion.get(i).getId().equals(ItemID)) {
+                    if (ShopSPotion.get(i).getId().equals(ItemID) && ShopSPotion.get(i).getBuyPrice() < currentPlayer.getFirst().getGold()) {
                         InvSPotion.add(ShopSPotion.get(i));
-                        currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - ShopSPotion.get(i).getSellPrice());
+                        currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - ShopSPotion.get(i).getBuyPrice());
                         ShopSPotion.remove(i);
                     }
                 }
                 break;
             case "pscroll":
                 for (int i = 0; i < ShopPScroll.size(); i++) {
-                    if (ShopPScroll.get(i).getId().equals(ItemID)) {
+                    if (ShopPScroll.get(i).getId().equals(ItemID) && ShopPScroll.get(i).getBuyPrice() < currentPlayer.getFirst().getGold()) {
                         InvPScroll.add(ShopPScroll.get(i));
-                        currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - ShopPScroll.get(i).getSellPrice());
+                        currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - ShopPScroll.get(i).getBuyPrice());
                         ShopPScroll.remove(i);
                     }
                 }
                 break;
             case "sscroll":
                 for (int i = 0; i < ShopSScroll.size(); i++) {
-                    if (ShopSScroll.get(i).getId().equals(ItemID)) {
+                    if (ShopSScroll.get(i).getId().equals(ItemID) && ShopSScroll.get(i).getBuyPrice() < currentPlayer.getFirst().getGold()) {
                         InvSScroll.add(ShopSScroll.get(i));
-                        currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - ShopSScroll.get(i).getSellPrice());
+                        currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - ShopSScroll.get(i).getBuyPrice());
                         ShopSScroll.remove(i);
                     }
                 }
                 break;
             case "weapon":
                 for (int i = 0; i < ShopWeapon.size(); i++) {
-                    if (ShopWeapon.get(i).getId().equals(ItemID)) {
+                    if (ShopWeapon.get(i).getId().equals(ItemID) && ShopWeapon.get(i).getBuyPrice() < currentPlayer.getFirst().getGold()) {
                         InvWeapon.add(ShopWeapon.get(i));
-                        currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - ShopWeapon.get(i).getSellPrice());
-                        ShopWeapon.get(i);
+                        currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - ShopWeapon.get(i).getBuyPrice());
+                        ShopWeapon.remove(i);
                     }
                 }
                 break;
             case "armour":
                 for (int i = 0; i < ShopArmour.size(); i++) {
-                    if (ShopArmour.get(i).getId().equals(ItemID)) {
+                    if (ShopArmour.get(i).getId().equals(ItemID) && ShopArmour.get(i).getBuyPrice() < currentPlayer.getFirst().getGold()) {
                         InvArmour.add(ShopArmour.get(i));
-                        currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - ShopArmour.get(i).getSellPrice());
+                        currentPlayer.getFirst().setGold(currentPlayer.getFirst().getGold() - ShopArmour.get(i).getBuyPrice());
                         ShopArmour.remove(i);
                     }
                 }

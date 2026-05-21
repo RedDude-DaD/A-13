@@ -1,0 +1,90 @@
+08:53:51.660873300     Register     try to register: aa
+08:53:54.231342200     Login     User Logged in aa
+08:54:01.520965900     Create character     created character acb
+08:54:03.765932700     Forest     entered inventory
+08:54:09.142301300     forest     entered stats
+08:54:12.889719100     forest     generated shop items
+08:54:12.939198800     forest     entered village
+08:54:15.924315100     village     entered inn
+08:54:19.749301     village     entered shop
+08:54:32.309688400     forest     generated shop items
+08:54:32.350175100     forest     entered village
+08:54:33.717761     forest     generated shop items
+08:54:33.757785600     forest     entered village
+08:54:34.853896500     forest     entered battle
+08:54:40.213830     battle     player attacked, did 32
+08:54:44.421967800     battle     player won
+08:54:54.862226100     forest     entered battle
+08:54:56.118133100     battle     player attacked, did 20
+08:54:58.207281500     battle     entered inventory
+08:54:59.733319900     inventory     used potion
+08:55:02.363672400     battle     entered inventory
+08:55:04.310369600     inventory     used potion
+08:55:24.310749200     battle     player attacked, did 18
+08:55:24.965738600     battle     player attacked, did 18
+08:55:25.669719     battle     player attacked, did 18
+08:55:26.965782     battle     player died
+09:39:58.874904800     Login     User Logged in aa
+09:40:04.352370700     Create character     created character aga
+09:40:05.318692     forest     entered battle
+09:40:06.318732800     battle     player attacked, did 31
+09:40:07.901307500     battle     player won
+09:40:09.050819100     forest     generated shop items
+09:40:09.098593400     forest     entered village
+09:40:10.218093800     village     entered inn
+09:40:51.374836300     village     entered inn
+09:42:49.232940700     Login     User Logged in aa
+09:42:50.227658900     character select     choose character aga
+09:42:51.182159100     forest     entered battle
+09:42:52.781170     forest     entered battle
+09:42:53.940739     forest     entered battle
+09:42:55.024045400     forest     generated shop items
+09:42:55.082927200     forest     entered village
+09:42:56.585065600     village     entered inn
+09:51:24.064960400     Login     User Logged in aa
+09:51:24.922644700     character select     choose character aga
+09:51:25.920550700     forest     generated shop items
+09:51:25.983320100     forest     entered village
+09:51:26.847008700     village     entered shop
+09:51:43.678890100     village     entered shop
+09:52:08.997496200     shop     bougth item
+09:54:17.472074800     Login     User Logged in aa
+09:54:18.435067500     character select     choose character aga
+09:54:19.253221     forest     entered battle
+09:54:20.573062700     forest     entered battle
+09:54:22.075228900     forest     generated shop items
+09:54:22.123943     forest     entered village
+09:54:22.972582500     village     entered shop
+09:54:24.612694     shop     bougth item
+09:55:16.927682500     Login     User Logged in aa
+09:55:17.882559400     character select     choose character aga
+09:55:18.709007400     forest     entered battle
+09:55:19.958800800     forest     generated shop items
+09:55:20.008248900     forest     entered village
+09:55:21.237338100     village     entered shop
+09:55:24.301170700     shop     bougth item
+09:55:28.677163500     shop     bougth item
+09:55:32.565163600     shop     bougth item
+09:55:40.532915700     village     entered shop
+09:56:22.156236900     Login     User Logged in aa
+09:56:23.654931400     character select     choose character aga
+09:56:24.718425800     forest     generated shop items
+09:56:24.779737600     forest     entered village
+09:56:25.565501     village     entered shop
+22:16:57.823471     Login     User Logged in aa
+22:17:10.617604900     Create character     created character animal
+22:17:12.170707400     forest     entered battle
+22:17:15.012023500     battle     player attacked, did 33
+22:17:17.627010900     battle     player won
+22:17:19.555791800     forest     entered battle
+22:17:23.126955600     Forest     entered inventory
+22:17:25.203758600     forest     entered battle
+22:17:26.874822400     forest     entered battle
+22:17:28.122310900     forest     entered battle
+22:17:30.507368700     forest     entered battle
+22:17:31.771860700     forest     entered battle
+22:17:33.287622900     forest     generated shop items
+22:17:33.337246600     forest     entered village
+22:17:35.770977     village     entered shop
+22:17:47.555625300     shop     bougth item
+22:17:51.255189500     Forest     Save and exit animal
